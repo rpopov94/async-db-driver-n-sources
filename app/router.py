@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.exc import NoResultFound
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy.orm import selectinload
 
 from app.database.models import async_session, Data_1, Data_2, Data_3
 

@@ -9,8 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncAttrs
 
 # load enviroments
 load_dotenv()
-username = os.environ.get("USERNAME")
-password = os.environ.get("PASSWORD")
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 # define models
@@ -40,7 +39,5 @@ class Data_3(Base):
 
 
 # Create engine
-engine = create_async_engine(
-    f"postgresql+asyncpg://{username}:{password}@localhost/test",
-)
+engine = create_async_engine(DATABASE_URL)
 async_session = async_sessionmaker(engine, expire_on_commit=False)
